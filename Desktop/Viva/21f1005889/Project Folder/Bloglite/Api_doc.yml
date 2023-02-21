@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: User Engagement API
+  version: 1.0.0
+  description: API for retrieving user engagement data in a blog or social media application.
+servers:
+  - url: http://localhost:5000
+paths:
+  /user_engagement/{user_id}:
+    get:
+      summary: Retrieve user engagement data
+      description: Retrieves user engagement data for the user with the specified ID.
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: The ID of the user.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: User engagement data retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_engagement:
+                    type: object
+                    properties:
+                      user_id:
+                        type: integer
+                      total_posts:
+                        type: integer
+                      total_comments:
+                        type: integer
+                      total_likes:
+                        type: integer
+                      total_followers:
+                        type: integer
+                      total_following:
+                        type: integer
+        '404':
+          description: User not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string

@@ -1,0 +1,20 @@
+{% extends "nav.html" %}
+
+{% block content %}
+<h1>Change Username and Password</h1>
+
+<form method="POST" action="{{ url_for('authentication.settings') }}">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" name="username" class="form-control" value="{{ current_user.username }}" required>
+        <br>
+        <label for="password">New Password:</label>
+        <input type="password" class="form-control" name="password" required>
+        <br>
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" class="form-control" name="confirm_password" required>
+        <br>
+        <input type="submit" value="Update">
+    </div>
+</form>
+{% endblock %}
