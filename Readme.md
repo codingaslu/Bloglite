@@ -48,9 +48,8 @@ To run the application:
 2. Create a virtual environment with `python -m venv .{{Foldername}}`
 3. Activate the virtual environment with `source {{Foldername}}/bin/activate`
 4. Install the dependencies with `pip install -r requirements.txt`
-5. Set the Flask application environment variable with `export FLASK_APP=app.py`
-6. Run the Flask application with `flask run`
-7. Access the application at `http://localhost:5000`
+5. To run the flask app, on the shell, run ``python app.py``
+6. Access the application at `http://localhost:5000`
 
 ## API Documentation
 
