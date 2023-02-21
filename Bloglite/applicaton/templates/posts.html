@@ -1,0 +1,31 @@
+{% extends "posts_div.html" %}
+{% block title %}{{ username }}'s Posts{% endblock %}
+{% block header %}
+
+<h1 align="center">{{ username }}'s Posts</h1>
+<div style="
+display: flex;
+justify-content: space-between;
+">
+<a href="{{ url_for('views.user_engagement', user_id=user_id) }}" class="btn btn-primary btn-lg" style="position:relative; right:0; top:0; margin-bottom: 10px;">User Engagement</a>
+{% if username != current_user.username %}
+
+<form action="{{ url_for('views.follow_unfollow', username=username) }}" method="POST">
+    {% if following %}
+    <button type="submit" class="btn btn-primary btn-lg" style="position:relative; right:0; top:0; margin-bottom: 10px;">Unfollow</button>
+    {% else %}
+    <button type="submit" class="btn btn-primary btn-lg" style="position:relative; right:0; top:0; margin-bottom: 10px;">Follow</button>
+    {% endif %}
+</form>
+{% endif %}
+  <!-- Add a link to the user engagement page --> 
+  
+</div>  
+{% endblock %}
+
+{% block footer %}
+
+<div align="center">
+    <a href="\home"><button type="button" class="btn btn-primary btn-lg">Back</button></a>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "nav.html" %}
+
+{% block content %}
+<style>
+  .search-container {
+    width: 95%;
+    margin: auto;
+  }
+  
+  .search-container .Each-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #80808066;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    transition: 0.2s;
+  }
+  
+  .search-container .Each-user:hover {
+    box-shadow: 1px 1px 5px 3px #00000012;
+  }
+  
+  @media (max-width:600px) {
+    .search-container .Each-user {
+      width: 90%;
+    }
+  }
+  
+  .search-container .Each-user button {
+    background-color: blue; 
+    border: none;
+    color: white;
+    height: 26px;
+    border-radius: 5px;
+    font-family: monospace;
+  }
+  
+  
+  .search-container .Each-user button:hover {
+    background: #0000ffab;
+  }
+  
+  .search-container .Each-user h5 {
+    font-family: monospace;
+    font-size: 17px;
+  }
+  
+  </style>
+  <div class='search-container'>
+    <h1>Search</h1>
+    {% if users %}
+    {% for user in users %}
+      <div class="Each-user">
+        <h5>{{ user.username }}</h5>
+        <form action="{{ url_for('views.post', username=user.username) }}" method="GET" >
+          <button type="submit">View Profile</button>
+        </form>
+      </div>
+    {% endfor %}
+    {% else %}
+      <p>No users found.</p>
+    {% endif %}
+  </div>
+{% endblock %}

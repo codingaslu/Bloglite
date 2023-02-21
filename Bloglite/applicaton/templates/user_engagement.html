@@ -1,0 +1,138 @@
+{% extends "nav.html" %}
+{% block title %}User Engagement{% endblock %}
+{% block content %}
+<style>
+  body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+  }
+
+  h3 {
+    margin: 10px;
+    color:#2c26269e;
+  }
+
+  .user-engage-container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f4f4;
+  }
+
+  .user-box {
+    width: 50%;
+    box-shadow: 0px 0px 8px 0px #a0a0f3a6;
+    border-radius: 9px;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .user-box:hover {
+    scale: 1.01;
+  }
+
+  .user-box h1 {
+    color: #0000ff99;
+    font-size: 40px;
+  }
+
+  .user-box .userid {
+    color: red;
+    margin-bottom: 30px;
+  }
+
+  .user-box .userid span {
+    color: #a80101;
+  }
+
+  .foll {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 16px 0px;
+  }
+
+  .followers {
+    border-right: 1px solid #00000040;
+    width: 50%;
+  }
+
+  .following {
+    width: 50%;
+  }
+
+  .post-comment-like {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80px;
+  }
+
+  .posts {
+     border-right: 1px solid #00000040;
+     width: 33.33%;
+  }
+
+  .comments {
+     border-right: 1px solid #00000040;
+      width: 33.33%;
+  }
+
+  .likes {
+    width: 33.33%;
+  }
+
+
+  @media (max-width:700px) {
+    .user-box {
+      width: 77%;
+    }
+  }
+
+  @media (max-width:500px) {
+    h3 {
+      font-size: 16px;
+    }
+
+    .user-box h1 {
+      font-size: 33px;
+    }
+  }
+</style>
+
+<div class="user-engage-container">
+  <div class="user-box">
+    <h1 class="userid">{{ user_engagement['username'] }}</h1>
+    <!-- <h3 class="userid">User ID: <span>{{ user_engagement['user_id'] }}</span></h3> -->
+    <hr>
+    <div class="foll">
+        <div class="followers">
+          <h3>Followers</h3>
+          <h3>{{ user_engagement['total_followers'] }}</h3>
+        </div>
+        <div class="following">
+          <h3>Following</h3>
+          <h3>{{ user_engagement['total_following'] }}</h3>
+        </div>
+      </div>
+      <hr>
+      <div class="post-comment-like">
+        <div class="posts">
+          <h3>Posts</h3>
+          <h3>{{ user_engagement['total_posts'] }}</h3>
+        </div>
+        <div class="comments">
+          <h3>Comments</h3>
+          <h3>{{ user_engagement['total_comments'] }}</h3>
+        </div>
+        <div class="likes">
+          <h3>Likes</h3>
+          <h3>{{ user_engagement['total_likes'] }}</h3>
+        </div>
+      </div>
+    </div>
+    </div>
+    {% endblock %}
+    

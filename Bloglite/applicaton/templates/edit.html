@@ -1,0 +1,13 @@
+{% extends "nav.html" %}
+{% block title %}Edit Post{% endblock %}
+{% block content %}
+<h1 align="center">Edit Post</h1>
+<form method="POST" action="{{ url_for('views.edit', id=post.id) }}">
+  <div class="form-group">
+    <label for="text">Post Text</label>
+    <textarea class="form-control" id="text" name="text" rows="3">{{ post.text }}</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+  <a href="{{ url_for('views.home') }}"><button type="button" class="btn btn-secondary">Cancel</button></a>
+</form>
+{% endblock %}
