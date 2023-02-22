@@ -57,3 +57,8 @@ To run the application:
 
 The API endpoint for retrieving user engagement data is `/api/user/<user_id>/engagement`. The endpoint takes a user ID as a parameter and returns a JSON object
 
+## License
+
+This project is licensed under the terms of the MIT license. See the LICENSE file for details.
+
+
