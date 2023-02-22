@@ -51,7 +51,7 @@ To run the application:
 5. To run the flask app, on the shell, run ``python app.py``
 6. Access the application at `http://localhost:5000`
 
-## API Documentation
+## API 
 
-The API endpoint for retrieving user engagement data is `/api/user/<user_id>/engagement`. The endpoint takes a user ID as a parameter and returns a JSON object with the following fields:
+The API endpoint for retrieving user engagement data is `/api/user/<user_id>/engagement`. The endpoint takes a user ID as a parameter and returns a JSON object
 
