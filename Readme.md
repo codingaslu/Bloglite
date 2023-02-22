@@ -1,3 +1,5 @@
+[![GitHub stars](https://img.shields.io/github/stars/codingaslu/Bloglite.svg)](https://github.com/codingaslu/Bloglite/stargazers)
+
 # Blog Lite Web Application
 
 This is a simple web application that allows users to create posts, follow other users, and interact with their posts by liking and commenting on them. The application also includes a REST API that allows external applications to access user engagement data.
